@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marvel Heroes</title>
+  <link rel="stylesheet" type="" href="css/bootstrap.min.css" />
+  <link href="css/style.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+    defer></script>
+  <script src="app.js" type="module" defer></script>
+</head>
+
+<body>
+  <h1>Arsenal de Heroes</h1>
+  <form enctype="multipart/form-data" id="heroForm">
+    <div class="mb-3">
+      <label for="nombreHeroe" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombreHeroe" aria-describedby="nombreHeroe" />
+      <div id="emailHelp" class="form-text">La imaginacion es el limite!</div>
+    </div>
+    <div class="mb-3">
+      <label for="edadHeroe" class="form-label">Edad</label>
+      <input type="number" class="form-control" id="edadHeroe" />
+    </div>
+    <div class="mb-3">
+      <label for="nombreSecretoHeroe" class="form-label">Nombre codigo</label>
+      <input type="text" class="form-control" id="nombreSecretoHeroe" />
+    </div>
+    <div class="mb-3">
+      <label for="trajesHeroe">Selecciona el traje de tu super heroe</label>
+      <select id="trajesHeroe" class="form-select" aria-label="Default select example">
+        <option selected>Click Aqui</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <legend>Posicion</legend>
+      <label for="longitud" class="form-label">Longitud</label>
+      <input type="number" class="form-control" id="longitud" />
+      <label for="latitud" class="form-label">Latitud</label>
+      <input type="number" class="form-control" id="latitud" />
+    </div>
+    <div class="mb-3">
+      <label for="imagenHeroe" class="form-label">Imagen</label>
+      <input type="url" class="form-control" name="imagen" id="imagenHeroe" onsubmit="" />
+    </div>
+      <button type="submit" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#modalTrajes" id="botonAgregar">
+      Agregar
+    </button>
+    <button class="btn btn-danger botonEliminar" data-bs-toggle="modal" data-bs-target="#modalEliminar">
+      Eliminar
+    </button>
+  </form>
+
+  <!-- MODAL AGREGAR -->
+  <div class="modal modalAgregar" tabindex="-1" id="modalTrajes">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL ELIMINAR -->
+  <div class="modal modalEliminar" tabindex="-1" id="modalEliminar">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Eliminador de heroes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <label for="nombreEliminar" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombreEliminar" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+          <button type="button" class="btn btn-danger">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
