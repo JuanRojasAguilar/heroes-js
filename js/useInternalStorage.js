@@ -1,7 +1,3 @@
-const getAllHeroes = () => {
-  const heroes = localStorage.
-}
-
 const getSingleHero = (nombre) => {
   const nombreMin = nombre.toLowerCase();
   const hero = localStorage.getItem(nombreMin);
@@ -10,21 +6,15 @@ const getSingleHero = (nombre) => {
 }
 
 const setStorage = (hero) => {
-  const newHero = {
-    nombre: hero.nombre,
-    edad: hero.edad,
-    codName: hero.nombreSecreto,
-    latitud: hero.latitud,
-    longitud: hero.longitud,
-    imagen: hero.imagen,
-  };
-  let nombreMin = hero.nombre.toLowerCase();
-  if (!!getSingleHero(nombreMin)) {
-    localStorage.removeItem(nombreMin);
+  if (!!getSingleHero(hero.nombre)) {
+    localStorage.removeItem(hero.nombre.toLowerCase());
   }
-  const heroeJSON = JSON.stringify(newHero);
-  localStorage.setItem(nombreMin, heroeJSON);
+  const heroeJSON = JSON.stringify(hero);
+  localStorage.setItem(hero.nombre.toLowerCase(), heroeJSON);
 }
 
-export { setStorage, getSingleHero };
+const deleteHero = (nombre) => {
+  localStorage.removeItem(nombre.toLowerCase());
+}
 
+export { setStorage, getSingleHero, deleteHero };

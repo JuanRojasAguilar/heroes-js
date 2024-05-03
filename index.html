@@ -14,69 +14,67 @@
 </head>
 
 <body>
-  <h1>Arsenal de Heroes</h1>
-  <form enctype="multipart/form-data" id="heroForm">
-    <div class="mb-3">
-      <label for="nombreHeroe" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="nombreHeroe" aria-describedby="nombreHeroe" />
-      <div id="emailHelp" class="form-text">La imaginacion es el limite!</div>
-    </div>
-    <div class="mb-3">
-      <label for="edadHeroe" class="form-label">Edad</label>
-      <input type="number" class="form-control" id="edadHeroe" />
-    </div>
-    <div class="mb-3">
-      <label for="nombreSecretoHeroe" class="form-label">Nombre codigo</label>
-      <input type="text" class="form-control" id="nombreSecretoHeroe" />
-    </div>
-    <div class="mb-3">
-      <label for="trajesHeroe">Selecciona el traje de tu super heroe</label>
-      <select id="trajesHeroe" class="form-select" aria-label="Default select example">
-        <option selected>Click Aqui</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-
-    <div class="mb-3">
-      <legend>Posicion</legend>
-      <label for="longitud" class="form-label">Longitud</label>
-      <input type="number" class="form-control" id="longitud" />
-      <label for="latitud" class="form-label">Latitud</label>
-      <input type="number" class="form-control" id="latitud" />
-    </div>
-    <div class="mb-3">
-      <label for="imagenHeroe" class="form-label">Imagen</label>
-      <input type="url" class="form-control" name="imagen" id="imagenHeroe" onsubmit="" />
-    </div>
-      <button type="submit" class="btn btn-primary boton" data-bs-toggle="modal" data-bs-target="#modalTrajes" id="botonAgregar">
-      Agregar
-    </button>
-    <button class="btn btn-danger botonEliminar" data-bs-toggle="modal" data-bs-target="#modalEliminar">
-      Eliminar
-    </button>
-  </form>
-
-  <!-- MODAL AGREGAR -->
-  <div class="modal modalAgregar" tabindex="-1" id="modalTrajes">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="container justify-content-md-center">
+    <h1 class="text-center">Arsenal de Heroes</h1>
+    <form enctype="multipart/form-data" id="heroForm">
+      <div class="row">
+        <div class="mb-3 col">
+          <label for="nombreHeroe" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombreHeroe" aria-describedby="nombreHeroe" />
+          <div id="emailHelp" class="form-text">La imaginacion es el limite!</div>
         </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
+        <div class="mb-3 col">
+          <label for="edadHeroe" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="edadHeroe" />
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Close
-          </button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+
+      </div>
+      <div class="mb-3 row">
+        <div class="col">
+          <label for="nombreSecretoHeroe" class="form-label">Nombre codigo</label>
+          <input type="text" class="form-control" id="nombreSecretoHeroe" />
+        </div>
+        <div class="col">
+          <label for="nombreSecretoHeroe" class="form-label">Productora</label>
+          <select id="productoraHeroe" class="form-select">
+            <option selected>Click Aqui</option>
+            <option value="marvel">Marvel</option>
+            <option value="dc">DC</option>
+          </select>
         </div>
       </div>
-    </div>
+      <div class="mb-3">
+        <label for="trajesHeroe">Selecciona el traje de tu super heroe</label>
+        <select id="trajesHeroe" class="form-select">
+          <option selected>Click Aqui</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col">
+          <label for="longitud" class="form-label">Longitud</label>
+          <input type="number" class="form-control" id="longitud" />
+        </div>
+        <div class="col">
+          <label for="latitud" class="form-label">Latitud</label>
+          <input type="number" class="form-control" id="latitud" />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="imagenHeroe" class="form-label">Poster</label>
+        <input type="url" class="form-control" name="imagen" id="imagenHeroe" onsubmit="" />
+      </div>
+      <button type="submit" class="btn btn-primary boton" id="botonAgregar">
+        Agregar
+      </button>
+      <button class="btn btn-danger botonEliminar" data-bs-toggle="modal" data-bs-target="#modalEliminar" type="button">
+        Eliminar
+      </button>
+    </form>
+    <div class="" id="cardContainer"></div>
   </div>
 
   <!-- MODAL ELIMINAR -->
@@ -95,7 +93,7 @@
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             Cerrar
           </button>
-          <button type="button" class="btn btn-danger">Eliminar</button>
+          <button type="button" class="btn btn-danger" id="botonEliminarHeroe">Eliminar</button>
         </div>
       </div>
     </div>
